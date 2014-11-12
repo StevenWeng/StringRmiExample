@@ -6,8 +6,10 @@ public class RequestServiceImpl implements RequestService {
 
 	@Override
 	public Double getBmi(Double height, Double weight) {
-		// TODO Auto-generated method stub
-		return null;
+		if (height > 100) {
+			height = height / 100;
+		}
+		return weight / (height * height);
 	}
 
 }
