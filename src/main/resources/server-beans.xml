@@ -23,5 +23,18 @@
 		</property>
 	</bean>
 
+	<bean id="callbackService" class="com.irsa.example.rmi.impl.CallbackServiceImpl"></bean>
+
+	<bean id="callbackServiceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
+		<property name="service">
+			<ref bean="callbackService" />
+		</property>
+		<property name="serviceName">
+			<value>callbackService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>com.irsa.example.rmi.CallbackService</value>
+		</property>
+	</bean>
 	<!-- End RMI Configure -->
 </beans>

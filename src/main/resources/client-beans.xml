@@ -20,5 +20,14 @@
 		</property>
 	</bean>
 
+	<bean id="callbackServiceProxy"
+		class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>rmi://127.0.0.1/callbackService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>com.irsa.example.rmi.CallbackService</value>
+		</property>
+	</bean>
 	<!-- End RMI Configure -->
 </beans>
