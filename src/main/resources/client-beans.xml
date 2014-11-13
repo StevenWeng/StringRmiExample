@@ -10,17 +10,15 @@
 
 	<!-- RMI Configure -->
 
-	<!-- <bean id="webUnitMonitorServiceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
-		<property name="service">
-			<ref bean="webUnitMonitor" />
-		</property>
-		<property name="serviceName">
-			<value>webUnitMonitorService</value>
+	<bean id="requestServiceProxy"
+		class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>rmi://127.0.0.1/requestService</value>
 		</property>
 		<property name="serviceInterface">
-			<value>com.systex.test.core.WebUnitMonitor</value>
+			<value>com.irsa.example.rmi.RequestService</value>
 		</property>
-	</bean> -->
+	</bean>
 
 	<!-- End RMI Configure -->
 </beans>
